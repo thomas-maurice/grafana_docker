@@ -1,0 +1,12 @@
+upstream grafana {
+    server 127.0.0.1:3000;
+}
+
+server {
+    listen 80 default;
+
+    location / {
+        proxy_pass http://grafana;
+    }
+}
+
